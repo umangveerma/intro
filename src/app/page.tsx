@@ -1,5 +1,4 @@
 import { Link } from "next-view-transitions";
-import { getBlogPosts } from "~~/blog";
 
 function UpRightArrowIcon() {
   return (
@@ -103,15 +102,15 @@ function ExperienceSection({
 export default function HomePage() {
   const workItems = [
     {
-      name: "leapflow",
-      link: "https://leapflow.tech",
+      name: "AskAnon",
+      link: "https://askanon.fun",
       position: "co-founder and cto (may 2024 - present)",
       description:
         "leading engineering to build ai agents for automating repetitive tasks in existing software",
     },
     {
-      name: "dimension",
-      link: "https://dimension.dev",
+      name: "CandyPay",
+      link: "https://candypay.fun",
       position: "full-stack engineer (nov 2023 - jan 2024)",
       description:
         "contributed to a large-scale t3 stack app. worked on real-time presence and chat features",
@@ -141,73 +140,28 @@ export default function HomePage() {
     },
   ] satisfies ExperienceItem[];
 
-  const posts = getBlogPosts()
-    .sort(
-      (a, b) =>
-        new Date(b.metadata.date).getTime() -
-        new Date(a.metadata.date).getTime(),
-    )
-    .slice(0, 4);
-
   return (
     <main className="text-left">
       <h1 className="mb-4 text-2xl font-medium tracking-tighter">
-        shoubhit dash
+        Umang Verma
       </h1>
 
       <div className="mb-4 flex flex-col gap-1">
         <div className="flex items-center gap-2 text-neutral-700 dark:text-neutral-300">
           <LocationIcon />
-          <p>chennai, india</p>
-        </div>
-
-        <div className="flex items-center gap-2 text-neutral-700 dark:text-neutral-300">
-          <WorkIcon />
-          <p className="inline-flex">co-founder and cto @ leapflow</p>
+          <p>Kolkata, IN</p>
         </div>
       </div>
 
       <p className="prose prose-neutral dark:prose-invert">
-        i&apos;m a 19 y/o cs undergrad student. i love building things and
-        solving problems. i enjoy language design, web development and i live on
-        the terminal. if i&apos;m not coding, i&apos;m probably doing cardistry,
-        watching movies or obsessing over mechanical keyboards.
+        i&apos;m a 19 y/o college dropout. i love building fun products in the
+        blockchain space
       </p>
 
       <div className="my-8 grid grid-cols-1 gap-8 md:grid-cols-2">
         <ExperienceSection title="work" items={workItems} />
         <ExperienceSection title="projects" items={projectItems} />
       </div>
-
-      <h3 className="mb-6 text-xl font-medium">blog</h3>
-      <div className="flex flex-col gap-4">
-        {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="">
-            <div className="flex w-full justify-between">
-              <p className="font-medium underline decoration-neutral-400 decoration-[0.1em] underline-offset-2 dark:decoration-neutral-600">
-                {post.metadata.title.toLowerCase()}
-              </p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                {new Date(post.metadata.date)
-                  .toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                  })
-                  .toLowerCase()}
-              </p>
-            </div>
-          </Link>
-        ))}
-
-        <Link
-          href="/blog"
-          className="decoration-neutral-4000 font-medium underline decoration-[0.1em] underline-offset-2 dark:decoration-neutral-600"
-        >
-          all posts →
-        </Link>
-      </div>
-
       <h3 className="mt-8 text-xl font-medium">links</h3>
       <ul className="font-sm mt-4 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
@@ -215,7 +169,7 @@ export default function HomePage() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="mailto:shoubhit2005@gmail.com"
+            href="mailto:uv@umangverma.com"
           >
             <p className="mr-1 h-7">email</p>
             <UpRightArrowIcon />
@@ -226,7 +180,7 @@ export default function HomePage() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://x.com/nexxeln"
+            href="https://x.com/umang_veerma"
           >
             <p className="mr-1 h-7">x.com</p>
             <UpRightArrowIcon />
@@ -237,7 +191,7 @@ export default function HomePage() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/nexxeln"
+            href="https://github.com/uveerma"
           >
             <p className="mr-1 h-7">github</p>
             <UpRightArrowIcon />
@@ -248,7 +202,7 @@ export default function HomePage() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://www.linkedin.com/in/shoubhit-dash/"
+            href="https://www.linkedin.com/in/umangveerma/"
           >
             <p className="mr-1 h-7">linkedin</p>
             <UpRightArrowIcon />

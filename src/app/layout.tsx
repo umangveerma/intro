@@ -4,24 +4,23 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { clx } from "~~/utils";
-import { Navbar } from "~~/app/navbar";
 import { ViewTransitions } from "next-view-transitions";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.nexxel.dev"),
+  metadataBase: new URL("https://umangverma.com"),
   title: {
-    default: "Shoubhit Dash",
-    template: "%s | Shoubhit Dash",
+    default: "Umang Verma",
+    template: "Umang Verma",
   },
-  description: "Developer, cardist and maker of things.",
+  description: "I'm just a builder!",
   openGraph: {
-    title: "Shoubhit Dash",
-    description: "Developer, cardist and maker of things.",
-    url: "https://www.nexxel.dev",
-    siteName: "Shoubhit Dash",
+    title: "Umang Verma",
+    description: "I'm just a builder!",
+    url: "https://umangverma.com",
+    siteName: "Umang Verma",
     locale: "en_US",
     type: "website",
-    images: ["https://www.nexxel.dev/og/home"],
+    images: ["https://umangverma.com/home.jpg"],
   },
   robots: {
     index: true,
@@ -31,9 +30,9 @@ export const metadata: Metadata = {
     "max-snippet": -1,
   },
   twitter: {
-    title: "Shoubhit Dash",
+    title: "Umang Verma",
     card: "summary_large_image",
-    creator: "@nexxeln",
+    creator: "@umang_veerma",
   },
 };
 
@@ -54,7 +53,6 @@ export default function RootLayout({
       >
         <body className="mx-4 mb-40 mt-8 flex max-w-2xl flex-col antialiased md:flex-row lg:mx-auto">
           <main className="mt-6 flex min-w-0 flex-auto flex-col px-2 md:px-0">
-            <Navbar />
             {children}
           </main>
         </body>
