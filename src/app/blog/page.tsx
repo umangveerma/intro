@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
-import { Suspense } from "react";
-import { NewsletterForm } from "~~/app/blog/newsletter-form";
-import { ViewCounter } from "~~/app/blog/view-counter";
 import { getBlogPosts } from "~~/blog";
-import { redis } from "~~/lib/redis";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -30,7 +26,6 @@ export default function BlogPage() {
 
       <div className="my-8">
         <p className="mb-4 font-medium">subscribe for updates. no spam.</p>
-        <NewsletterForm />
       </div>
 
       <div className="flex flex-col gap-8">
@@ -51,10 +46,6 @@ export default function BlogPage() {
                     year: "numeric",
                   })
                   .toLowerCase()}
-                <Suspense>
-                  {" • "}
-                  <Views slug={post.slug} />
-                </Suspense>
               </p>
             </div>
           </Link>
@@ -62,13 +53,4 @@ export default function BlogPage() {
       </div>
     </section>
   );
-}
-async function Views({ slug }: { slug: string }) {
-  // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
-  const allViews = (await redis.get("views")) as {
-    slug: string;
-    views: number;
-  }[];
-
-  return <ViewCounter slug={slug} allViews={allViews} />;
 }
