@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     default: "Umang Verma",
     template: "Umang Verma",
   },
-  description: "I'm just a builder!",
+  description: "Building fun products!",
   openGraph: {
     title: "Umang Verma",
-    description: "I'm just a builder!",
+    description: "Building fun products!",
     url: "https://umangverma.com",
     siteName: "Umang Verma",
     locale: "en_US",
@@ -46,10 +46,16 @@ export default function RootLayout({
       <html
         lang="en"
         className={clx(
-          "bg-neutral-100 text-black dark:bg-neutral-950 dark:text-white",
+          "bg-gray-100 text-gray-900",
           GeistSans.variable,
           GeistMono.variable,
         )}
+        style={{
+          backgroundImage: 'url(/bg.svg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '100vh',
+        }}
       >
         <body className="mx-4 mb-40 mt-8 flex max-w-2xl flex-col antialiased md:flex-row lg:mx-auto">
           <main className="mt-6 flex min-w-0 flex-auto flex-col px-2 md:px-0">
